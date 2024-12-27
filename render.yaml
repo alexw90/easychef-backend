@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: easychef-api
+    runtime: docker
+    plan: free
+    repo: https://github.com/alexw90/easychef-backend.git
+    branch: main
+    buildCommand: docker build -t easychef-api .
+    startCommand: docker run -p $PORT:80 easychef-api
